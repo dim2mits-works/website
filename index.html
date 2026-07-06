@@ -78,7 +78,8 @@
       min-height: 76px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
+      padding: 0 10px;
       gap: 24px;
     }
 
@@ -127,16 +128,6 @@
       color: var(--white);
       font-weight: 700;
       box-shadow: 0 12px 25px rgba(15, 76, 129, 0.18);
-    }
-
-    .mobile-menu-label {
-      font-size: 0.9rem;
-      color: var(--primary);
-      font-weight: 700;
-      border: 1px solid var(--border);
-      padding: 9px 14px;
-      border-radius: 999px;
-      background: var(--white);
     }
 
     .hero {
@@ -469,8 +460,6 @@
       font-size:.9rem;
     }
 
-    @media(min-width:900px){
-
       .hero-grid{
         grid-template-columns:1.15fr .85fr;
       }
@@ -481,10 +470,6 @@
 
       .nav-links{
         display:flex;
-      }
-
-      .mobile-menu-label{
-        display:none;
       }
 
     }
@@ -526,10 +511,6 @@ Get Started
 </a>
 
 </nav>
-
-<div class="mobile-menu-label">
-MENU
-</div>
 
 </div>
 
