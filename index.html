@@ -1,127 +1,821 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Sirris Guides</title>
+  <title>Sirris Guides | Educational Apps & Digital Learning Solutions</title>
 
-<style>
+  <meta name="description" content="Sirris Guides creates educational apps and digital learning solutions for work, language learning, and practical everyday skills." />
+  <meta name="keywords" content="Sirris Guides, educational apps, language learning, work language trainer, digital learning solutions" />
+  <meta name="author" content="Sirris Guides" />
 
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#f4f7fb;
-color:#222;
-}
+  <meta property="og:title" content="Sirris Guides" />
+  <meta property="og:description" content="Educational Apps & Digital Learning Solutions" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sirrisguides.com" />
+  <meta property="og:image" content="assets/og-image.png" />
 
-header{
-background:#0b57d0;
-color:white;
-padding:50px 20px;
-text-align:center;
-}
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
 
-h1{
-margin:0;
-font-size:42px;
-}
+  <style>
+    :root {
+      --primary: #0f4c81;
+      --primary-dark: #08375f;
+      --primary-light: #eaf4ff;
+      --accent: #1d9bf0;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --white: #ffffff;
+      --bg: #f8fbff;
+      --border: #dbeafe;
+      --shadow: 0 20px 45px rgba(15, 76, 129, 0.12);
+      --radius: 22px;
+    }
 
-.subtitle{
-margin-top:10px;
-font-size:20px;
-opacity:.9;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.container{
-max-width:900px;
-margin:auto;
-padding:30px;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.card{
-background:white;
-padding:25px;
-border-radius:12px;
-box-shadow:0 3px 10px rgba(0,0,0,.08);
-margin-bottom:25px;
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-.button{
-display:inline-block;
-padding:12px 22px;
-background:#0b57d0;
-color:white;
-text-decoration:none;
-border-radius:8px;
-margin-top:15px;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-footer{
-margin-top:50px;
-padding:25px;
-text-align:center;
-background:#eee;
-font-size:14px;
-}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-</style>
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.03em;
+    }
+
+    .brand-subtitle {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 22px;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: var(--white);
+      font-weight: 700;
+      box-shadow: 0 12px 25px rgba(15, 76, 129, 0.18);
+    }
+
+    .mobile-menu-label {
+      font-size: 0.9rem;
+      color: var(--primary);
+      font-weight: 700;
+      border: 1px solid var(--border);
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: var(--white);
+    }
+
+    .hero {
+      padding: 78px 0 64px;
+      background:
+        radial-gradient(circle at top right, rgba(29, 155, 240, 0.16), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.86rem;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 8vw, 5rem);
+      line-height: 1.02;
+      letter-spacing: -0.06em;
+      color: var(--primary-dark);
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 620px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 16px 32px rgba(15, 76, 129, 0.2);
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--primary);
+      border: 1px solid var(--border);
+    }
+
+    .hero-note {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+
+    .phone-preview {
+      border-radius: 30px;
+      background: linear-gradient(180deg, #0f4c81, #08375f);
+      color: var(--white);
+      padding: 26px;
+      min-height: 430px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .phone-preview::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      right: -80px;
+      top: -60px;
+    }
+
+    .app-badge {
+      position: relative;
+      z-index: 2;
+      display: inline-flex;
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .phone-preview h2 {
+      position: relative;
+      z-index: 2;
+      font-size: 2rem;
+      line-height: 1.1;
+      margin-top: 60px;
+    }
+
+    .phone-preview p {
+      position: relative;
+      z-index: 2;
+      color: rgba(255, 255, 255, 0.78);
+      margin-top: 14px;
+    }
+
+    .lesson-card {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 22px;
+      padding: 18px;
+      margin-top: 34px;
+    }
+
+    .lesson-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .lesson-row:last-child {
+      border-bottom: none;
+    }
+
+    .lesson-label {
+      opacity: 0.72;
+    }
+
+    .lesson-value {
+      font-weight: 800;
+    }
+        section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 18px;
+      color: var(--primary-dark);
+      font-size: clamp(2rem,5vw,3rem);
+      font-weight: 800;
+    }
+
+    .section-subtitle {
+      max-width: 760px;
+      margin: 0 auto 55px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .features-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:28px;
+    }
+
+    .feature-card{
+      background:#fff;
+      border-radius:22px;
+      padding:32px;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      transition:.3s;
+    }
+
+    .feature-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .feature-icon{
+      width:64px;
+      height:64px;
+      border-radius:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      background:var(--primary-light);
+      margin-bottom:20px;
+    }
+
+    .feature-card h3{
+      margin-bottom:15px;
+      color:var(--primary);
+    }
+
+    .feature-card p{
+      color:var(--muted);
+    }
+
+    .coming-soon{
+      background:linear-gradient(135deg,#0f4c81,#08375f);
+      color:white;
+      border-radius:35px;
+      padding:70px 45px;
+      text-align:center;
+    }
+
+    .coming-soon h2{
+      font-size:2.6rem;
+      margin-bottom:20px;
+    }
+
+    .coming-soon p{
+      max-width:760px;
+      margin:auto;
+      color:rgba(255,255,255,.85);
+      font-size:1.1rem;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:40px;
+      align-items:center;
+    }
+
+    .about-box{
+      background:white;
+      border-radius:25px;
+      padding:35px;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+    }
+
+    .about-box h3{
+      color:var(--primary);
+      margin-bottom:20px;
+      font-size:2rem;
+    }
+
+    .about-box p{
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    .contact-box{
+      background:white;
+      border-radius:28px;
+      padding:45px;
+      text-align:center;
+      box-shadow:var(--shadow);
+      border:1px solid var(--border);
+    }
+
+    .contact-box h2{
+      color:var(--primary);
+      margin-bottom:20px;
+    }
+
+    .contact-email{
+      display:inline-block;
+      margin-top:20px;
+      font-size:1.2rem;
+      font-weight:bold;
+      color:var(--accent);
+    }
+
+    footer{
+      background:#052b49;
+      color:white;
+      padding:60px 0 30px;
+      margin-top:80px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:40px;
+    }
+
+    footer h4{
+      margin-bottom:20px;
+    }
+
+    footer a{
+      display:block;
+      margin-bottom:10px;
+      color:#d8e9ff;
+    }
+
+    footer a:hover{
+      color:white;
+    }
+
+    .copyright{
+      margin-top:45px;
+      text-align:center;
+      opacity:.7;
+      font-size:.9rem;
+    }
+
+    @media(min-width:900px){
+
+      .hero-grid{
+        grid-template-columns:1.15fr .85fr;
+      }
+
+      .hero-actions{
+        flex-direction:row;
+      }
+
+      .nav-links{
+        display:flex;
+      }
+
+      .mobile-menu-label{
+        display:none;
+      }
+
+    }
+
+  </style>
 
 </head>
 
 <body>
 
-<header>
+<header class="site-header">
 
-<h1>Sirris Guides</h1>
+<div class="container navbar">
 
-<div class="subtitle">
+<div class="brand">
+
+<div class="brand-title">
+Sirris Guides
+</div>
+
+<div class="brand-subtitle">
 Educational Apps & Digital Learning Solutions
+</div>
+
+</div>
+
+<nav class="nav-links">
+
+<a href="#">Home</a>
+
+<a href="#workready">WorkReady</a>
+
+<a href="#about">About</a>
+
+<a href="#contact">Contact</a>
+
+<a class="nav-cta" href="#workready">
+Get Started
+</a>
+
+</nav>
+
+<div class="mobile-menu-label">
+MENU
+</div>
+
 </div>
 
 </header>
 
-<div class="container">
+<section class="hero">
 
-<div class="card">
+<div class="container hero-grid">
 
-<h2>WorkReady Language</h2>
+<div>
 
-<p>
+<div class="eyebrow">
 
-WorkReady Language helps people learn practical workplace language for warehouses, logistics, factories, airports and other professional environments.
-
-</p>
+Professional Learning Apps
 
 </div>
 
-<div class="card">
+<h1>
 
-<h2>Privacy Policy</h2>
+Learn Languages.
+Work Anywhere.
+
+</h1>
 
 <p>
 
-Our applications comply with the General Data Protection Regulation (GDPR) and Google Play Developer Policies.
+Sirris Guides develops practical educational applications designed to help people learn faster, improve workplace communication and build real-world skills for international careers.
 
 </p>
 
-<a href="#" class="button">
+<div class="hero-actions">
 
-Privacy Policy
+<a class="btn btn-primary" href="#workready">
+
+Explore WorkReady
+
+</a>
+
+<a class="btn btn-secondary" href="#about">
+
+Learn More
 
 </a>
 
 </div>
 
-<div class="card">
+<div class="hero-note">
 
-<h2>Contact</h2>
+Android version coming soon on Google Play.
+
+</div>
+
+</div>
+
+<div class="hero-card">
+
+<div class="phone-preview">
+
+<div class="app-badge">
+
+WORKREADY
+
+</div>
+
+<h2>
+
+Language Training for Real Jobs
+
+</h2>
 
 <p>
 
-Email:
+Warehouse • Logistics • Airport • Factory • Security • Drivers
 
-<b>sirrisguides@gmail.com</b>
+</p>
+
+<div class="lesson-card">
+
+<div class="lesson-row">
+
+<div class="lesson-label">
+
+Lessons
+
+</div>
+
+<div class="lesson-value">
+
+300+
+
+</div>
+
+</div>
+
+<div class="lesson-row">
+
+<div class="lesson-label">
+
+Audio
+
+</div>
+
+<div class="lesson-value">
+
+Native Speakers
+
+</div>
+
+</div>
+
+<div class="lesson-row">
+
+<div class="lesson-label">
+
+Practice
+
+</div>
+
+<div class="lesson-value">
+
+Daily
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section id="workready">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      WorkReady Language Trainer
+    </h2>
+
+    <p class="section-subtitle">
+      Learn the language you actually need at work. Designed for real jobs,
+      practical conversations and everyday communication.
+    </p>
+
+    <div class="features-grid">
+
+      <div class="feature-card">
+
+        <div class="feature-icon">🌍</div>
+
+        <h3>Multiple Languages</h3>
+
+        <p>
+          Learn English, Dutch, German, Norwegian and more through practical
+          vocabulary and real workplace conversations.
+        </p>
+
+      </div>
+
+      <div class="feature-card">
+
+        <div class="feature-icon">🎧</div>
+
+        <h3>Native Audio</h3>
+
+        <p>
+          Every lesson includes authentic pronunciation to improve listening
+          and speaking confidence.
+        </p>
+
+      </div>
+
+      <div class="feature-card">
+
+        <div class="feature-icon">💼</div>
+
+        <h3>Job Focused</h3>
+
+        <p>
+          Warehouse, logistics, airport, factory, security and professional
+          driving vocabulary.
+        </p>
+
+      </div>
+
+      <div class="feature-card">
+
+        <div class="feature-icon">📈</div>
+
+        <h3>Track Progress</h3>
+
+        <p>
+          Monitor your learning with statistics, favorites, revision and daily
+          practice.
+        </p>
+
+      </div>
+
+      <div class="feature-card">
+
+        <div class="feature-icon">🧠</div>
+
+        <h3>Smart Learning</h3>
+
+        <p>
+          Learn faster using repetition, quizzes and practical examples instead
+          of memorising isolated words.
+        </p>
+
+      </div>
+
+      <div class="feature-card">
+
+        <div class="feature-icon">📱</div>
+
+        <h3>Mobile First</h3>
+
+        <p>
+          Optimised for smartphones so you can study anywhere, anytime.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section>
+
+<div class="container">
+
+<div class="contact-box">
+
+<h2>
+
+Available Soon on Google Play
+
+</h2>
+
+<p>
+
+WorkReady Language Trainer will soon be available for Android devices.
+
+</p>
+
+<br>
+
+<a class="btn btn-primary" href="#">
+
+Google Play
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="container">
+
+<div class="coming-soon">
+
+<h2>
+
+More Educational Solutions Coming Soon
+
+</h2>
+
+<p>
+
+We are continuously developing new educational applications and practical
+digital learning solutions designed to help people improve their skills,
+expand their opportunities and achieve their goals.
+
+Stay tuned for future releases.
 
 </p>
 
@@ -129,12 +823,101 @@ Email:
 
 </div>
 
-<footer>
+</section>
 
-© 2026 Sirris Guides
 
-</footer>
+<section id="about">
 
-</body>
+<div class="container about-grid">
 
-</html>
+<div>
+
+<h2 class="section-title" style="text-align:left;margin-bottom:25px;">
+
+About Sirris Guides
+
+</h2>
+
+<p>
+
+Sirris Guides is an independent educational software initiative focused on
+building practical learning tools that solve real-world problems.
+
+</p>
+
+<p>
+
+Our mission is to make professional education simple, affordable and
+accessible for everyone.
+
+</p>
+
+<p>
+
+Every application is designed with simplicity, usability and practical value
+in mind.
+
+</p>
+
+</div>
+
+<div class="about-box">
+
+<h3>
+
+Our Vision
+
+</h3>
+
+<p>
+
+To become a trusted creator of educational applications that help people
+learn practical skills for work and everyday life.
+
+</p>
+
+<p>
+
+We believe technology should simplify learning—not complicate it.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact-box">
+
+<h2>
+
+Contact
+
+</h2>
+
+<p>
+
+Questions, suggestions or business enquiries?
+
+We would be happy to hear from you.
+
+</p>
+
+<a class="contact-email"
+href="mailto:sirrisguides@gmail.com">
+
+sirrisguides@gmail.com
+
+</a>
+
+</div>
+
+</div>
+
+</section>
