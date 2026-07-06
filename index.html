@@ -476,7 +476,59 @@
         display:flex;
       }
 
-    }
+    .links-grid{
+
+      display:grid;
+
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+      gap:20px;
+
+      margin-top:40px;
+
+      }
+
+    .link-card{
+
+      display:flex;
+
+      align-items:center;
+
+     justify-content:center;
+
+     padding:18px;
+
+     background:white;
+
+     border:1px solid var(--border);
+
+     border-radius:18px;
+
+     font-weight:bold;
+
+     font-size:1rem;
+
+     color:var(--primary);
+
+     text-decoration:none;
+
+     box-shadow:var(--shadow);
+
+     transition:.25s;
+
+     }
+
+   .link-card:hover{
+
+     transform:translateY(-4px);
+
+     background:var(--primary);
+
+     color:white;
+
+     }
+
+     }
 
   </style>
 
